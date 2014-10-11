@@ -1,4 +1,8 @@
 
+cookbook_file "/etc/motd" do
+    source "motd"
+end
+
 git "/home/vagrant/.oh-my-zsh" do
     repository "https://github.com/robbyrussell/oh-my-zsh.git"
     reference "master"

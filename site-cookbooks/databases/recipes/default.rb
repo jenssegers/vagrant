@@ -1,3 +1,4 @@
+
 include_recipe "database::mysql"
 
 mysql_connection_info = {
