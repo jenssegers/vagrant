@@ -1,0 +1,10 @@
+# Navigation
+alias ..="cd .."
+alias cd..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Shortcuts
+alias g="git"
+alias gs="git status"

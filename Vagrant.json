@@ -1,0 +1,36 @@
+{
+    "run_list": [
+        "apt",
+        "build-essential",
+        "zsh",
+        "openssl",
+        "apache2",
+        "apache2::mod_rewrite",
+        "apache2::mod_php5",
+        "apache2::mod_ssl",
+        "mysql::client",
+        "mysql::server",
+        "database::mysql",
+        "php",
+        "php::module_mysql",
+        "php::module_mysql",
+        "php::module_sqlite3",
+        "php::module_pgsql",
+        "php::module_memcache",
+        "php::module_apc",
+        "php::module_curl",
+        "composer",
+        "composer::self_update",
+        "nodejs",
+        "webserver",
+        "databases",
+        "tools"
+    ],
+    "php": {
+        "packages": ["php5-cgi", "php5", "php5-dev", "php5-cli", "php-pear", "php5-mcrypt"]
+    },
+    "mysql": {
+        "server_root_password": "",
+        "allow_remote_root": true
+    }
+}

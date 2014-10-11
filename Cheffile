@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'https://supermarket.getchef.com/api/v1'
+
+cookbook 'apt'
+cookbook 'openssl'
+cookbook 'apache2'
+cookbook 'memcached'
+cookbook 'php'
+cookbook 'composer'
+cookbook 'mysql'
+cookbook 'database'
+cookbook 'nodejs'
+cookbook 'zsh'
