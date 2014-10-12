@@ -19,6 +19,7 @@
         "php::module_memcache",
         "php::module_apc",
         "php::module_curl",
+        "php::module_gd",
         "composer",
         "composer::self_update",
         "nodejs",
