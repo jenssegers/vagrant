@@ -1,6 +1,7 @@
 {
     "run_list": [
         "apt",
+        "git::source",
         "build-essential",
         "zsh",
         "openssl",
@@ -37,6 +38,9 @@
         "users": {
             "homestead": "secret"
         }
+    },
+    "git": {
+        "version": "2.1.2"
     },
     "mongodb": {
         "config": {

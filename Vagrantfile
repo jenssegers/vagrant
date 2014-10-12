@@ -31,6 +31,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
   end
 
+  # Get Chef json
   VAGRANT_JSON = JSON.parse(Pathname(__FILE__).dirname.join('Vagrant.json').read)
 
   # Provisioning

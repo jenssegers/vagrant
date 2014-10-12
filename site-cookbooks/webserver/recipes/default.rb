@@ -5,6 +5,7 @@ apache_site "000-default" do
 end
 
 web_app "vagrant" do
+    server_name "localhost"
     allow_override "all"
     docroot "/var/www"
     cookbook "apache2"
