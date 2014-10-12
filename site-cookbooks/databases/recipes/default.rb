@@ -7,14 +7,22 @@ mysql_connection_info = {
     :password => node['mysql']['server_root_password']
 }
 
-mysql_database_user 'homestead' do
-  connection mysql_connection_info
-  password 'secret'
-  host '%'
-  action [:create, :grant]
+node["mysql"]["users"].each do |username, password|
+
+    mysql_database_user "#{username}" do
+        connection mysql_connection_info
+        password "#{password}"
+        host '%'
+        action [:create, :grant]
+    end
+
 end
 
-mysql_database 'homestead' do
-  connection mysql_connection_info
-  action :create
+node["mysql"]["databases"].each do |database|
+
+    mysql_database "#{database}" do
+        connection mysql_connection_info
+        action :create
+    end
+
 end

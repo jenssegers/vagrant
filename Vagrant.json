@@ -31,7 +31,11 @@
     },
     "mysql": {
         "server_root_password": "",
-        "allow_remote_root": true
+        "allow_remote_root": true,
+        "databases": ["homestead", "auki"],
+        "users": {
+            "homestead": "secret"
+        }
     },
     "mongodb": {
         "config": {
