@@ -1,4 +1,3 @@
-
 nodejs_npm "grunt-cli" do
-    options ['--global']
+    options ["--global"]
 end

@@ -3,7 +3,6 @@
         "apt",
         "git::source",
         "build-essential",
-        "zsh",
         "openssl",
         "apache2",
         "apache2::mod_rewrite",
@@ -12,8 +11,9 @@
         "mysql::client",
         "mysql::server",
         "database::mysql",
+        "redis2",
         "php",
-        "php::module_mysql",
+        "php::module_mcrypt",
         "php::module_mysql",
         "php::module_sqlite3",
         "php::module_pgsql",
@@ -21,30 +21,32 @@
         "php::module_apc",
         "php::module_curl",
         "php::module_gd",
+        "php::module_igbinary",
+        "php::module_redis",
+        "php::module_blitz",
         "composer",
         "composer::self_update",
         "nodejs",
-        "webserver",
-        "databases",
-        "tools"
+        "tools::bower",
+        "tools::grunt",
+        "tools::gulp",
+        "tools::phpunit",
+        "tools::oh-my-zsh",
+        "custom"
     ],
     "php": {
-        "packages": ["php5-cgi", "php5", "php5-dev", "php5-cli", "php-pear", "php5-mcrypt"]
+        "ext_conf_dir": "/etc/php5/apache2/conf.d",
+        "packages": ["php5-cgi", "php5", "php5-dev", "php5-cli", "php-pear", "php5-mcrypt", "php5-intl"]
     },
     "mysql": {
         "server_root_password": "",
         "allow_remote_root": true,
-        "databases": ["homestead"],
+        "databases": ["homestead", "auki"],
         "users": {
             "homestead": "secret"
         }
     },
     "git": {
         "version": "2.1.2"
-    },
-    "mongodb": {
-        "config": {
-            "smallfiles": true
-        }
     }
 }

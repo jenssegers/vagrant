@@ -1,15 +1,22 @@
 VAGRANTFILE_API_VERSION = "2"
 
+# --------------------------------------------------------------------------
+# Configuration
+# --------------------------------------------------------------------------
 
 # Variables
 ip_address  = "192.168.33.10"
-memory      = "1024"
+memory      = "512"
 directory   = "/Users/Jens/Sites"
 
 
+# --------------------------------------------------------------------------
+# Vagrant stuff
+# --------------------------------------------------------------------------
+
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.box = "chef/debian-7.4"
+  config.vm.box = "ubuntu/trusty64"
 
   # Port forwarding
   config.vm.network "forwarded_port", guest: 80, host: 8000

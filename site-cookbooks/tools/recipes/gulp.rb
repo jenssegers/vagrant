@@ -1,4 +1,3 @@
-
 nodejs_npm "gulp" do
-    options ['--global']
+    options ["--global"]
 end

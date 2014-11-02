@@ -2,6 +2,15 @@ My personal Vagrant-based PHP development environment.
 
 ### Installation
 
-This Vagrant box requires the omnibus plugin to ensure that Chef is installed on the VM.
+Make sure you have installed Vagrant. Then run these commands:
 
     vagrant plugin install vagrant-omnibus
+    gem install librarian-chef
+    librarian-chef install
+
+### Configuration
+
+There are two main configuration files:
+
+ - Vagrantfile (Vagrant configuration)
+ - Vagrant.json (Chef node configuration)

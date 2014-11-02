@@ -1,4 +1,3 @@
-
 nodejs_npm "bower" do
-    options ['--global']
+    options ["--global"]
 end
