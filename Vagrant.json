@@ -23,7 +23,7 @@
         "php::module_gd",
         "php::module_igbinary",
         "php::module_redis",
-        "php::module_blitz",
+        "php::module_intl",
         "composer",
         "composer::self_update",
         "nodejs",
@@ -35,8 +35,7 @@
         "custom"
     ],
     "php": {
-        "ext_conf_dir": "/etc/php5/apache2/conf.d",
-        "packages": ["php5-cgi", "php5", "php5-dev", "php5-cli", "php-pear", "php5-mcrypt", "php5-intl"]
+        "ext_conf_dir": "/etc/php5/apache2/conf.d"
     },
     "mysql": {
         "server_root_password": "",
