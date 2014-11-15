@@ -39,11 +39,7 @@
     },
     "mysql": {
         "server_root_password": "",
-        "allow_remote_root": true,
-        "databases": ["homestead"],
-        "users": {
-            "homestead": "secret"
-        }
+        "allow_remote_root": true
     },
     "git": {
         "version": "2.1.3"
