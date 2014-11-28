@@ -27,6 +27,7 @@
         "composer",
         "composer::self_update",
         "nodejs",
+        "blackfire",
         "tools::bower",
         "tools::grunt",
         "tools::gulp",
@@ -43,5 +44,11 @@
     },
     "git": {
         "version": "2.1.3"
+    },
+    "blackfire": {
+        "agent": {
+            "server-id": "",
+            "server-token": ""
+        }
     }
 }

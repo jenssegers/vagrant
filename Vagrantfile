@@ -6,7 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 # Variables
 ip_address  = "192.168.33.10"
-memory      = "512"
+memory      = "1024"
 directory   = "/Users/Jens/Sites"
 
 
@@ -27,7 +27,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = "vagrant"
 
   # Folders
-  config.vm.synced_folder directory, "/var/www", :mount_options => ["dmode=777", "fmode=666"]
+  config.vm.synced_folder directory, "/var/www", type: "nfs"
 
   # VirtualBox
   config.vm.provider "virtualbox" do |vb|
