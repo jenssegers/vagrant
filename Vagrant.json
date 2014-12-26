@@ -1,12 +1,10 @@
 {
     "run_list": [
         "apt",
-        "git::source",
-        "build-essential",
-        "openssl",
+        "git",
         "apache2",
+        "apache2::mod_php5fpm",
         "apache2::mod_rewrite",
-        "apache2::mod_php5",
         "apache2::mod_ssl",
         "mysql::client",
         "mysql::server",
@@ -36,14 +34,17 @@
         "custom"
     ],
     "php": {
-        "ext_conf_dir": "/etc/php5/apache2/conf.d"
+        "conf_dir": "/etc/php5/fpm",
+        "ext_conf_dir": "/etc/php5/fpm/conf.d",
+        "directives": {
+            "display_errors": "On",
+            "display_startup_errors": "On",
+            "default_charset": "utf-8"
+        }
     },
     "mysql": {
         "server_root_password": "",
         "allow_remote_root": true
-    },
-    "git": {
-        "version": "2.1.3"
     },
     "blackfire": {
         "agent": {

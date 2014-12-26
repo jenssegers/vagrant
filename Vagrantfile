@@ -16,7 +16,7 @@ directory   = "/Users/Jens/Sites"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.box = "chef/debian-7.4"
+  config.vm.box = "ubuntu/trusty64"
 
   # Port forwarding
   config.vm.network "forwarded_port", guest: 80, host: 8000
