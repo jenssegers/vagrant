@@ -24,6 +24,7 @@
         "php::module_intl",
         "composer",
         "composer::self_update",
+        "beanstalkd",
         "nodejs",
         "blackfire",
         "tools::bower",
