@@ -27,7 +27,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = "vagrant"
 
   # Folders
-  config.vm.synced_folder directory, "/var/www", type: "nfs"
+  config.vm.synced_folder directory, "/var/www", :mount_options => ["dmode=777", "fmode=666"]
 
   # VirtualBox
   config.vm.provider "virtualbox" do |vb|

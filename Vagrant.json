@@ -40,7 +40,9 @@
         "directives": {
             "display_errors": "On",
             "display_startup_errors": "On",
-            "default_charset": "utf-8"
+            "default_charset": "utf-8",
+            "opcache.enable": "Off",
+            "apc.cache_by_default": "Off"
         }
     },
     "mysql": {
