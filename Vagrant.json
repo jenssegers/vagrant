@@ -16,6 +16,7 @@
         "php::module_sqlite3",
         "php::module_pgsql",
         "php::module_memcache",
+        "php::module_imap",
         "php::module_apc",
         "php::module_curl",
         "php::module_gd",
