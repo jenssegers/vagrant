@@ -3,4 +3,4 @@
 Cheffile.lock
 cookbooks
 tmp
-site-cookbooks/custom
+site-cookbooks/custom/recipes/custom.rb

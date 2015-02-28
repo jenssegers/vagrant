@@ -24,11 +24,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 27017, host: 27017
 
   # Private network
-  config.vm.network "private_network", ip: ip_address
+  config.vm.network "private_network", type: "dhcp"
+  #config.vm.network "public_network"
   config.vm.hostname = "vagrant"
 
   # Folders
   config.vm.synced_folder directory, "/var/www", :mount_options => ["dmode=777", "fmode=666"]
+  #config.vm.synced_folder directory, "/var/www", :type => "nfs"
 
   # VirtualBox
   config.vm.provider "virtualbox" do |vb|
@@ -43,7 +45,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   VAGRANT_JSON = JSON.parse(Pathname(__FILE__).dirname.join('Vagrant.json').read)
 
   # Provisioning
-  config.omnibus.chef_version = :latest
+  #config.omnibus.chef_version = :latest
   config.vm.provision "chef_solo" do |chef|
     chef.cookbooks_path = ["site-cookbooks", "cookbooks"]
     chef.run_list = VAGRANT_JSON.delete('run_list') if VAGRANT_JSON['run_list']
