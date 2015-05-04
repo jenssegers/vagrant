@@ -11,6 +11,7 @@
         "database::mysql",
         "redis2",
         "php",
+        "php::module_xdebug",
         "php::module_mcrypt",
         "php::module_mysql",
         "php::module_sqlite3",
@@ -45,7 +46,15 @@
             "display_startup_errors": "On",
             "default_charset": "utf-8",
             "opcache.enable": "Off",
-            "apc.cache_by_default": "Off"
+            "apc.cache_by_default": "Off",
+            "html_errors": "On",
+            "max_execution_time": 0,
+            "xdebug.remote_enable": "On",
+            "xdebug.remote_connect_back": "On",
+            "xdebug.idekey": "vagrant",
+            "xdebug.remote_host": "10.0.2.2",
+            "xdebug.var_display_max_data": 1024,
+            "xdebug.var_display_max_depth": 8
         }
     },
     "mysql": {
