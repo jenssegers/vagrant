@@ -1,6 +1,6 @@
+/cookbooks
+/tmp
+/site-cookbooks/custom/recipes/custom.rb
+/.vagrant
 .DS_Store
-.vagrant
 Cheffile.lock
-cookbooks
-tmp
-site-cookbooks/custom/recipes/custom.rb

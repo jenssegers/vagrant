@@ -6,7 +6,8 @@ VAGRANTFILE_API_VERSION = "2"
 
 # Variables
 ip_address  = "192.168.33.10"
-memory      = "1024"
+cpus        = "1"
+memory      = "512"
 directory   = "/Users/Jens/Sites"
 
 
@@ -24,19 +25,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 27017, host: 27017
 
   # Private network
-  config.vm.network "private_network", type: "dhcp"
-  #config.vm.network "public_network"
+  config.vm.network "private_network", ip: ip_address
   config.vm.hostname = "vagrant"
 
   # Folders
   config.vm.synced_folder directory, "/var/www", :mount_options => ["dmode=777", "fmode=666"]
-  #config.vm.synced_folder directory, "/var/www", :type => "nfs"
 
   # VirtualBox
   config.vm.provider "virtualbox" do |vb|
     vb.name = "Vagrant"
     vb.customize ["modifyvm", :id, "--memory", memory]
-    vb.customize ["modifyvm", :id, "--cpus", "1"]
+    vb.customize ["modifyvm", :id, "--cpus", cpus]
     vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
   end
