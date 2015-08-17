@@ -3,7 +3,7 @@
         "apt",
         "git",
         "apache2",
-        "apache2::mod_php5fpm",
+        "apache2::mod_fastcgi2",
         "apache2::mod_rewrite",
         "apache2::mod_ssl",
         "mysql",

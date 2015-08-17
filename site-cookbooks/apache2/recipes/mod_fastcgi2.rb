@@ -18,12 +18,4 @@ apt_repository "security-multiverse" do
 	components ["multiverse"]
 end
 
-package "libapache2-mod-fastcgi"
-
-include_recipe "apache2::mod_actions"
-
-apache_module "php5fpm" do
-	filename "mod_fastcgi.so"
-	identifier "fastcgi_module"
-    conf true
-end
+include_recipe "apache2::mod_fastcgi"
