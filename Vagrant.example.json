@@ -1,11 +1,6 @@
 {
     "run_list": [
-        "apt",
-        "git",
-        "apache2",
-        "apache2::mod_fastcgi2",
-        "apache2::mod_rewrite",
-        "apache2::mod_ssl",
+        "nginx",
         "mysql",
         "redis2",
         "php",
@@ -27,20 +22,26 @@
         "blackfire",
         "mongodb::mongodb_org_repo",
         "mongodb",
-        "tools::bower",
-        "tools::grunt",
-        "tools::gulp",
-        "tools::phpunit",
-        "tools::oh-my-zsh",
+        "tools",
         "custom"
     ],
+    "packages": [
+        "git",
+        "htop"
+    ],
+    "tools": [
+        "oh-my-zsh",
+        "bower",
+        "grunt",
+        "phpunit"
+    ],
+    "apps": {
+        "localhost": {
+            "root": "/var/www"
+        }
+    },
     "mysql": {
         "server_root_password": ""
-    },
-    "mongodb": {
-        "config": {
-            "smallfiles": true
-        }
     },
     "blackfire": {
         "agent": {
