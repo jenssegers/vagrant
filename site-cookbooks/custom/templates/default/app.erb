@@ -1,5 +1,6 @@
 server {
     listen       80;
+    listen       443 ssl;
     server_name  <%= @server_name %>;
     index        index.php index.html index.htm;
     root         <%= @root %>;

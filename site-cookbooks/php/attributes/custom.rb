@@ -16,3 +16,9 @@ default["php"]["directives"]["xdebug.remote_enable"] = "On"
 default["php"]["directives"]["xdebug.remote_connect_back"] = "On"
 default["php"]["directives"]["xdebug.var_display_max_data"] = -1
 default["php"]["directives"]["xdebug.var_display_max_depth"] = 8
+default["php"]["directives"]["xdebug.max_nesting_level"] = 200
+
+# PHP pool settings
+default["php"]["pool"]["pm"] = "ondemand"
+default["php"]["pool"]["pm.max_children"] = 3
+default["php"]["pool"]["pm.process_idle_timeout"] = "10s"

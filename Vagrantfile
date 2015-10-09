@@ -20,9 +20,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty64"
 
   # Port forwarding
-  config.vm.network "forwarded_port", guest: 80, host: 8000
-  config.vm.network "forwarded_port", guest: 3306, host: 3306
-  config.vm.network "forwarded_port", guest: 27017, host: 27017
+  config.vm.network "forwarded_port", guest: 80, host: 8000     # Nginx HTTP
+  config.vm.network "forwarded_port", guest: 443, host: 8442    # Nginx HTTPS
+  config.vm.network "forwarded_port", guest: 3306, host: 3306   # Mysql
+  config.vm.network "forwarded_port", guest: 27017, host: 27017 # Mongodb
 
   # Private network
   config.vm.network "private_network", ip: ip_address

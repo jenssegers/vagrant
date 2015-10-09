@@ -26,6 +26,13 @@ mysql_database_user "homestead" do
     action [:create, :grant]
 end
 
+mysql_database_user "travis" do
+    connection mysql_connection_info
+    password ""
+    host '%'
+    action [:create, :grant]
+end
+
 # --------------------------------------
 # Databases
 # --------------------------------------
