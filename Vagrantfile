@@ -8,7 +8,7 @@ VAGRANTFILE_API_VERSION = "2"
 ip_address  = "192.168.33.10"
 cpus        = "1"
 memory      = "512"
-directory   = "/Users/Jens/Sites"
+directory   = "/Users/Jens/Projects"
 
 
 # --------------------------------------------------------------------------
@@ -45,8 +45,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   VAGRANT_JSON = JSON.parse(Pathname(__FILE__).dirname.join('Vagrant.json').read)
 
   # Provisioning
-  #config.omnibus.chef_version = :latest
-  config.vm.provision "chef_solo" do |chef|
+  if Vagrant.has_plugin?("vagrant-omnibus")
+    config.omnibus.chef_version = 'latest'
+  end
+
+  config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = ["site-cookbooks", "cookbooks"]
     chef.run_list = VAGRANT_JSON.delete('run_list') if VAGRANT_JSON['run_list']
     chef.json = VAGRANT_JSON
