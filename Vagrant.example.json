@@ -1,5 +1,6 @@
 {
     "run_list": [
+        "git",
         "nginx",
         "mysql",
         "redis2",
@@ -40,6 +41,8 @@
             "root": "/var/www"
         }
     },
+    "databases": [
+    ],
     "mysql": {
         "server_root_password": ""
     },

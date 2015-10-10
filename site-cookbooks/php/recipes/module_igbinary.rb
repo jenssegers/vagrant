@@ -7,6 +7,10 @@ file "/etc/php5/mods-available/igbinary.ini" do
 "
 end
 
+file "/etc/php5/fpm/conf.d/igbinary.ini" do
+	action :delete
+end
+
 service node["php"]["service"] do
     supports :status => true, :restart => true, :reload => true
 end
