@@ -5,7 +5,7 @@ VAGRANTFILE_API_VERSION = "2"
 # --------------------------------------------------------------------------
 
 # Variables
-ip_address  = "192.168.33.10"
+ip_address  = "192.168.13.37"
 cpus        = "1"
 memory      = "512"
 directory   = "/Users/Jens/Projects"
