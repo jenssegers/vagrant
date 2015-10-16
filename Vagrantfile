@@ -21,7 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Port forwarding
   config.vm.network "forwarded_port", guest: 80, host: 8000     # Nginx HTTP
-  config.vm.network "forwarded_port", guest: 443, host: 8442    # Nginx HTTPS
+  config.vm.network "forwarded_port", guest: 443, host: 8443    # Nginx HTTPS
   config.vm.network "forwarded_port", guest: 3306, host: 3306   # Mysql
   config.vm.network "forwarded_port", guest: 27017, host: 27017 # Mongodb
 
@@ -42,16 +42,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # Get Chef json
-  VAGRANT_JSON = JSON.parse(Pathname(__FILE__).dirname.join('Vagrant.json').read)
+  VAGRANT_JSON = JSON.parse(Pathname(__FILE__).dirname.join("Vagrant.json").read)
 
   # Provisioning
   if Vagrant.has_plugin?("vagrant-omnibus")
-    config.omnibus.chef_version = 'latest'
+    config.omnibus.chef_version = "latest"
   end
 
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = ["site-cookbooks", "cookbooks"]
-    chef.run_list = VAGRANT_JSON.delete('run_list') if VAGRANT_JSON['run_list']
+    chef.run_list = VAGRANT_JSON.delete("run_list") if VAGRANT_JSON["run_list"]
     chef.json = VAGRANT_JSON
   end
 
