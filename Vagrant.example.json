@@ -38,6 +38,7 @@
     ],
     "apps": {
         "localhost": {
+            "aliases": ["vagrant", "vagrant.dev"],
             "root": "/var/www"
         }
     },
