@@ -22,3 +22,7 @@ default["php"]["directives"]["xdebug.max_nesting_level"] = 200
 default["php"]["pool"]["pm"] = "ondemand"
 default["php"]["pool"]["pm.max_children"] = 3
 default["php"]["pool"]["pm.process_idle_timeout"] = "10s"
+
+# Custom MySQL socket location
+default["php"]["directives"]["mysql.default_socket"] = "/run/mysql-default/mysqld.sock"
+default["php"]["directives"]["pdo_mysql.default_socket"] = "/run/mysql-default/mysqld.sock"

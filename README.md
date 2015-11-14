@@ -36,7 +36,7 @@ Make sure that you change the `directory` to the folder that contains all your p
 
 Rename the `Vagrant.json.example` file to `Vagrant.json`. `Vagrant.json` is the main configuration file used by Chef. It should be fairly straightforward to edit the file for your personal setup. Make sure you modify the apps and databases section for your vhost and database configuration. At the top are the Chef recipes that are executed.
 
-# Starting the box
+## Starting the box
 
 Go to the Vagrant box directory and run:
 
