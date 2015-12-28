@@ -4,7 +4,7 @@
         "nginx",
         "mysql",
         "redis2",
-        "php",
+        "php::custom",
         "php::module_xdebug",
         "php::module_mcrypt",
         "php::module_mysql",
@@ -49,8 +49,8 @@
     },
     "blackfire": {
         "agent": {
-            "server-id": "",
-            "server-token": ""
+            "server_id": "",
+            "server_token": ""
         }
     }
 }
