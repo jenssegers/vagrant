@@ -5,7 +5,7 @@ VAGRANTFILE_API_VERSION = "2"
 # --------------------------------------------------------------------------
 
 # Variables
-ip_address  = "192.168.13.37"
+ip_address  = "10.255.255.10"
 cpus        = "1"
 memory      = "512"
 directory   = "/Users/Jens/Projects"
@@ -17,7 +17,8 @@ directory   = "/Users/Jens/Projects"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.box = "ubuntu/trusty64"
+  #config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "parallels/ubuntu-14.04"
 
   # Port forwarding
   config.vm.network "forwarded_port", guest: 80, host: 8000     # Nginx HTTP
@@ -30,7 +31,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = "vagrant"
 
   # Folders
-  config.vm.synced_folder directory, "/var/www", :mount_options => ["dmode=777", "fmode=666"]
+  config.vm.synced_folder directory, "/var/www"
 
   # VirtualBox
   config.vm.provider "virtualbox" do |vb|
@@ -39,6 +40,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--cpus", cpus]
     vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+  end
+
+  # Parallels
+  config.vm.provider "parallels" do |prl|
+    prl.name = "Vagrant"
+    prl.linked_clone = true
+    prl.memory = memory
+    prl.cpus = cpus
   end
 
   # Get Chef json
